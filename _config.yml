@@ -1,0 +1,57 @@
+# Basic site info
+title:              "Madhura Dole"
+description:        "Machine Learning & NLP Enthusiast | Research Engineer"
+keywords:           "Madhura Dole, Machine Learning, software engineer, life experience, technology and research"
+logo_text:          "Madhura Dole"
+show_tagline:       true # edit file in /_includes/tagline.html
+show_social_icons:  true # edit file in /_includes/social_links.html
+og_locale:          "en_US"
+cover:              "/assets/logo.png" # site image cover
+
+# Site URL settings
+url:                https://madhuradole.github.io/ # main url
+baseurl:            null # for gh-pages
+enforce_ssl:        
+github_post_dir:    https://github.com/madhuradole/madhuradole.github.io/
+
+# Site author info
+author:
+  name:             "Madhura Dole"
+  email:            madhuradole@gmail.com
+  github_username:  madhuradole
+  twitter_username: 
+  facebook_url:     
+
+# Disqus comment settings
+disqus_enabled:     true
+disqus_shortname:   madhuradole-github-io
+
+# GA
+google_analytics_code: UA-58296043-7
+
+# Build settings
+source:             ./
+destination:        ./_site
+permalink:          /:year/:title
+markdown:           kramdown
+highlighter:        rouge
+timezone:           Asia/Kuala_Lumpur
+exclude:            ["README.md", "LICENSE.md", "CHANGELOG.md"]
+
+# Site configurations
+compress_html:
+  clippings:        all
+  comments:         ["<!-- ", " -->"]
+  endings:          all
+  ignore:
+    envs:           [local]
+  blanklines:       false
+  profile:          false
+  startings:        [html, head, body]
+
+sass:
+  sass_dir:         assets/scss
+  style:            compressed # expanded
+
+gems:
+  - jekyll-sitemap
