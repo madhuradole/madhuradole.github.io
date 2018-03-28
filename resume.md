@@ -5,7 +5,7 @@ description: My Resume
 keywords: Resume page
 ---
 
-[madhura.dole@utdallas.edu](mailto:madhura.dole@utdallas.edu) || +1-(214)-729-3832 || [LinkedIn](https://www.linkedin.com/in/madhuradole) || [GitHub](https://github.com/madhuradole/)
+[madhura.dole@utdallas.edu](mailto:madhura.dole@utdallas.edu) - +1-(214)-729-3832 - [LinkedIn](https://www.linkedin.com/in/madhuradole) - [GitHub](https://github.com/madhuradole/)
 
 #### CAREER SUMMARY 
 
