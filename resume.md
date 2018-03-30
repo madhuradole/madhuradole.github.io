@@ -13,10 +13,19 @@ R & D Programmer with a yearlong ongoing experience in Machine Learning and Natu
 
 #### SKILLS 
 
-- **Languages**  : Java, C#, C++, VB.NET, Python, SQL, XML. Databases  : MySQL, Oracle, NoSQL(MongoDB).
-- **NLP/ML Tools**  : Scikit-learn, Matplotlib, Pandas, NumPy, NLTK, Weka, TensorFlow. 
-- **Software Tools**  : MS Visual Studio, MS Team Foundation Server, Unity, Eclipse, Tomcat server, SQL Server    Management Studio, Oracle SQL plus, Selenium IDE, NetBeans IDE. 
-- **Cloud Platforms** : IBM Cloud, AWS. Repositories  : GIT, SVN, Tortoise. 
+- **Languages**  		: Java, C#, Python, SQL, C++, VB.NET, XML.
+
+- **Databases**  		: MySQL, Oracle, NoSQL(MongoDB).
+
+- **NLP/ML Tools**   	: Scikit-learn, Matplotlib, Pandas, NumPy, TensorFlow, NLTK, Weka. 
+
+- **Software Tools**  	: MS Visual Studio, MS Team Foundation Server, Unity, Eclipse, Tomcat server, SQL
+
+     				  Server Management Studio, Oracle SQL plus, Selenium IDE, NetBeans IDE. 
+
+- **Cloud Platforms** : IBM Cloud, AWS.
+
+- **Repositories**  	: GIT, SVN, Tortoise. 
 
 #### EDUCATION 
 
@@ -44,11 +53,11 @@ Concentration: Machine Learning - May 2013 (GPA: 4.0[WES])
 
 ##### Senior Software Developer (Designation: Systems Engineer) at TATA Consultancy Services Jul. 2013 – Jun. 2016 
 
-- ## Website Developer & Team Lead (TCS internal – Java, J2EE, EJB) (6 months)
+- ##### Website Developer & Team Lead (TCS internal – Java, J2EE, EJB) (6 months)
 
   - Led a team of six developers to build one of the three modules in a Website development project (Hotel Management) using MVC architectural pattern with Java, JDBC, JSP, Servlets, HTML, CSS and JavaScript.
 
-- ## Software Developer in Delivery Project (TCS client – C#, .NET, SQL) (2.5 years)
+- ##### Software Developer in Delivery Project (TCS client – C#, .NET, SQL) (2.5 years)
 
   - Developed a language interpreter for OTX (ISO specified XML files) in C#. 
   - Developed innovative ideas for Process Improvement, using WCF applications, VB.NET and SQL. 
@@ -57,6 +66,11 @@ Concentration: Machine Learning - May 2013 (GPA: 4.0[WES])
   - Mentored new employees in Client project and guided them constantly throughout the project. 
 
 #### PROJECTS 
+
+##### Food Recommendation System (Machine Learning – Scikit-Learn, Matplotlib)   Feb. - Mar 2018
+
+- This recommendation system helps users select products which they may like and makes recommendation to stimulate sales and increase profits.
+- Built a random forest regression model by using the algorithm to find latent score of a pair of user and item and plotted a confusion matrix for analysis.
 
 ##### Music Genre Classification (Machine Learning – Python, Scikit-Learn, Matplotlib)   Jan. - May 2017 
 
