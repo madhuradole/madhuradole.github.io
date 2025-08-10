@@ -1,82 +1,71 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Madhura Dole - Software Engineer">
-    <title>Madhura Dole - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Madhura Dole</h1>
-            <p>Software Engineer | Backend Systems | Distributed Architectures | Cloud Solutions</p>
-            <div class="buttons">
-                <a href="resume.pdf" class="btn" download>Download Resume</a>
-                <a href="https://www.linkedin.com/in/madhura-dole" target="_blank" class="btn">LinkedIn</a>
-                <a href="https://github.com/madhuradole" target="_blank" class="btn">GitHub</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="experience" class="container">
-        <h2>Experience</h2>
-        <div class="job">
-            <h3>Software Engineer | Current Company</h3>
-            <ul>
-                <li>Designed and implemented a scheduling & orchestration system automating large-scale simulations using AWS SQS, Snowflake, and cron-based scheduling.</li>
-                <li>Built fault-tolerant retry mechanisms, improving reliability and reducing delays by 40%.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Product Reliability Engineer | Previous Company</h3>
-            <ul>
-                <li>Developed high-throughput monitoring pipelines ingesting telemetry from thousands of distributed nodes.</li>
-                <li>Optimized alerting and incident response systems, improving MTTR and service uptime.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Java Developer | TCS</h3>
-            <ul>
-                <li>Led a 6-member team to build a full-featured hotel management system using Java, JDBC, JSP, and Servlets.</li>
-                <li>Designed ER models, implemented SQL scripts, triggers, and stored procedures.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Simulation Scheduling System</h3>
-            <p>Built a cron-based scheduling engine to trigger simulations via AWS SQS. Added retries, fault recovery, and Snowflake storage for metadata. Reduced delays by 40%.</p>
-        </div>
-        <div class="project">
-            <h3>Hotel Management System</h3>
-            <p>Java-based MVC web app for hotel booking, billing, and room management. Designed backend and database schema for scalable performance.</p>
-        </div>
-    </section>
-
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Languages:</strong> Python, Java, SQL, JavaScript</li>
-            <li><strong>Cloud:</strong> AWS (SQS, DynamoDB, EKS, Lambda, CloudWatch)</li>
-            <li><strong>Data:</strong> Snowflake, Kafka, Hive, Spark</li>
-            <li><strong>Tools:</strong> Terraform, Git, Kubernetes, Airflow</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:madhuradole@example.com">madhuradole@example.com</a></p>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Madhura Dole</p>
-        </div>
-    </footer>
+<p class="p1">---</p>
+<p class="p1">layout: default</p>
+<p class="p1">title: Home</p>
+<p class="p1">---</p>
+<p class="p2"><br></p>
+<p class="p1">{% assign rawtags = "" %}</p>
+<p class="p1">{% for post in site.posts %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% assign ttags = post.tags | join:'|' | append:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% assign rawtags = rawtags | append:ttags %}</p>
+<p class="p1">{% endfor %}</p>
+<p class="p1">{% assign rawtags = rawtags | split:'|' | sort %}</p>
+<p class="p2"><br></p>
+<p class="p1">{% assign tags = "" %}</p>
+<p class="p1">{% for tag in rawtags %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% if tag != "" %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% if tags == "" %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% assign tags = tag | split:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endif %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% unless tags contains tag %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endunless %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% endif %}</p>
+<p class="p1">{% endfor %}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="posts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% for post in site.posts %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% unless post.next %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="year"&gt;{{ post.date | date: '%Y' }}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% else %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% if year != nyear %}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="year"&gt;{{ post.date | date: '%Y' }}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% endif %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% endunless %}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="post-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="post-list-date"&gt;&lt;small&gt;{{ post.date | date: "%b %d" }}&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-converted-space">    </span>&lt;div class="text-truncate"&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="post-list-desc"&gt;{{ post.description }}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% endfor %}</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;hr/&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">{% if tags %}</p>
+<p class="p1">&lt;div class="tag-cloud tag-cloud-small" id="Tags"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% for tag in tags %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a id="{{ tag | slugify }}" class="tag-anchor" href="{{ site.url }}{{ site.baseurl }}/tagged#{{ tag | slugify }}"&gt;&lt;i class="fa fa-tag muted"&gt;&lt;/i&gt; {{ tag }}&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% endfor %}</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">{% endif %}</p>
 </body>
 </html>
