@@ -1,54 +1,82 @@
----
-layout: default
-title: Home
----
 
-{% assign rawtags = "" %}
-{% for post in site.posts %}
-	{% assign ttags = post.tags | join:'|' | append:'|' %}
-	{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
-{% assign rawtags = rawtags | split:'|' | sort %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Madhura Dole - Software Engineer">
+    <title>Madhura Dole - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Madhura Dole</h1>
+            <p>Software Engineer | Backend Systems | Distributed Architectures | Cloud Solutions</p>
+            <div class="buttons">
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
+                <a href="https://www.linkedin.com/in/madhura-dole" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://github.com/madhuradole" target="_blank" class="btn">GitHub</a>
+            </div>
+        </div>
+    </header>
 
-{% assign tags = "" %}
-{% for tag in rawtags %}
-	{% if tag != "" %}
-		{% if tags == "" %}
-			{% assign tags = tag | split:'|' %}
-		{% endif %}
-		{% unless tags contains tag %}
-			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-		{% endunless %}
-	{% endif %}
-{% endfor %}
+    <section id="experience" class="container">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>Software Engineer | Current Company</h3>
+            <ul>
+                <li>Designed and implemented a scheduling & orchestration system automating large-scale simulations using AWS SQS, Snowflake, and cron-based scheduling.</li>
+                <li>Built fault-tolerant retry mechanisms, improving reliability and reducing delays by 40%.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Product Reliability Engineer | Previous Company</h3>
+            <ul>
+                <li>Developed high-throughput monitoring pipelines ingesting telemetry from thousands of distributed nodes.</li>
+                <li>Optimized alerting and incident response systems, improving MTTR and service uptime.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Java Developer | TCS</h3>
+            <ul>
+                <li>Led a 6-member team to build a full-featured hotel management system using Java, JDBC, JSP, and Servlets.</li>
+                <li>Designed ER models, implemented SQL scripts, triggers, and stored procedures.</li>
+            </ul>
+        </div>
+    </section>
 
-<div class="posts">
-  {% for post in site.posts %}
-    {% unless post.next %}
-      <h2 class="year">{{ post.date | date: '%Y' }}</h2>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h2 class="year">{{ post.date | date: '%Y' }}</h2>
-      {% endif %}
-    {% endunless %}
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Simulation Scheduling System</h3>
+            <p>Built a cron-based scheduling engine to trigger simulations via AWS SQS. Added retries, fault recovery, and Snowflake storage for metadata. Reduced delays by 40%.</p>
+        </div>
+        <div class="project">
+            <h3>Hotel Management System</h3>
+            <p>Java-based MVC web app for hotel booking, billing, and room management. Designed backend and database schema for scalable performance.</p>
+        </div>
+    </section>
 
-    <div class="post-list">
-      <div class="post-list-date"><small>{{ post.date | date: "%b %d" }}</small></div>
-	    <div class="text-truncate"><a href="{{ post.url }}">{{ post.title }}</a></div>
-      <div class="post-list-desc">{{ post.description }}</div>
-    </div>
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Languages:</strong> Python, Java, SQL, JavaScript</li>
+            <li><strong>Cloud:</strong> AWS (SQS, DynamoDB, EKS, Lambda, CloudWatch)</li>
+            <li><strong>Data:</strong> Snowflake, Kafka, Hive, Spark</li>
+            <li><strong>Tools:</strong> Terraform, Git, Kubernetes, Airflow</li>
+        </ul>
+    </section>
 
-  {% endfor %}
-</div>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:madhuradole@example.com">madhuradole@example.com</a></p>
+    </section>
 
-<hr/>
-
-{% if tags %}
-<div class="tag-cloud tag-cloud-small" id="Tags">
-  {% for tag in tags %}
-    <a id="{{ tag | slugify }}" class="tag-anchor" href="{{ site.url }}{{ site.baseurl }}/tagged#{{ tag | slugify }}"><i class="fa fa-tag muted"></i> {{ tag }}</a>
-  {% endfor %}
-</div>
-{% endif %}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Madhura Dole</p>
+        </div>
+    </footer>
+</body>
+</html>
