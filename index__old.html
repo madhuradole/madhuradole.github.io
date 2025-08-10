@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">---</p>
+<p class="p1">layout: default</p>
+<p class="p1">title: Home</p>
+<p class="p1">---</p>
+<p class="p2"><br></p>
+<p class="p1">{% assign rawtags = "" %}</p>
+<p class="p1">{% for post in site.posts %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% assign ttags = post.tags | join:'|' | append:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% assign rawtags = rawtags | append:ttags %}</p>
+<p class="p1">{% endfor %}</p>
+<p class="p1">{% assign rawtags = rawtags | split:'|' | sort %}</p>
+<p class="p2"><br></p>
+<p class="p1">{% assign tags = "" %}</p>
+<p class="p1">{% for tag in rawtags %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% if tag != "" %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% if tags == "" %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% assign tags = tag | split:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endif %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% unless tags contains tag %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{% endunless %}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>{% endif %}</p>
+<p class="p1">{% endfor %}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="posts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% for post in site.posts %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% unless post.next %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="year"&gt;{{ post.date | date: '%Y' }}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% else %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% if year != nyear %}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="year"&gt;{{ post.date | date: '%Y' }}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{% endif %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{% endunless %}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="post-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="post-list-date"&gt;&lt;small&gt;{{ post.date | date: "%b %d" }}&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-converted-space">    </span>&lt;div class="text-truncate"&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="post-list-desc"&gt;{{ post.description }}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% endfor %}</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;hr/&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">{% if tags %}</p>
+<p class="p1">&lt;div class="tag-cloud tag-cloud-small" id="Tags"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% for tag in tags %}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a id="{{ tag | slugify }}" class="tag-anchor" href="{{ site.url }}{{ site.baseurl }}/tagged#{{ tag | slugify }}"&gt;&lt;i class="fa fa-tag muted"&gt;&lt;/i&gt; {{ tag }}&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{% endfor %}</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">{% endif %}</p>
+</body>
+</html>
